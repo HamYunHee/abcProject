@@ -96,5 +96,6 @@ public class UserMapperTest {
 		User user = new User("bbbb", "11111", null, "gg", null);
 		userMapper.insertUser(user);
 		
+		System.out.println("ggg");
 	}
 }
