@@ -90,14 +90,11 @@ public class UserMapperTest {
 		assertEquals("testUpdateNameByEmail3", user2.getPhone(), "aaa-aaa-aaaa");
 	}
 	
-//	@Test
-//	public void testSign()
-//	{
-//		User user = new User("bbbb", "11111", null, "gg", null);
-//		userMapper.insertUser(user);
-//		
-//		User user2 = userMapper.getUserByEmail("bbbb", "11111");
-//		assertEquals("testGetUserByEmailAndPassword-email", user.getEmail(), user2.getEmail());
-//		assertEquals("testGetUserByEmailAndPassword-password", user.getPassword(),user2.getPassword());
-//	}
+	@Test
+	public void testSign()
+	{
+		User user = new User("bbbb", "11111", null, "gg", null);
+		userMapper.insertUser(user);
+		
+	}
 }
