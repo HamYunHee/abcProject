@@ -1,0 +1,195 @@
+/* 초기화 */
+ul{margin: 0; padding: 0}
+li{list-style: none}
+a{text-decoration: none}
+img{border: 0}
+body{width: 100%; margin: 0;padding: 0;background-color: aquamarine}
+.wrap{position: relative; width: 1000px;height:100%;margin: 0 auto;background-color: bisque}
+
+/* 부팅 페이지*/
+#bootlogo{width: 800px; margin: 0 auto;padding-top:200px;}
+#bootlogo img{width: 100%;display: block;}
+#bootsearch{width:800px; margin: 0 auto; margin-top:30px; font-size: 15px}
+#bootsearch select {float: left; width: 120px;height:50px;line-height: 50px; text-indent:1em}
+#bootsearch input[type="text"]{float:left;width:575px; height:44px;line-height:44px;text-indent:1em;font-size:15px;margin-left: -1px}
+#bootsearch input[type="submit"]{width: 100px;height: 50px}
+#bootlink{width: 800px;margin:30px auto}
+#bootlink input[type="button"]{height: 50px;font-size: 15px}
+.bootbtn{margin-left:480px;}
+
+/* 헤더 영역*/
+.headwrap{position: relative; width: 1000px;margin: 0 auto;background-color: bisque}
+#header{position: relative; width: 100%; height: 150px;margin: 0; background: #0dd}
+/* 헤더 > 전체 카테고리 */
+#category{float: left;margin-top: 100px;margin-left: 30px}
+#category a{display: block; color:#000}
+#category span{display: block; width:150px; height: 30px; line-height: 30px;text-align: center; background-color: #fff;border: 1px solid #ccc}
+.allcategory{width: 150px;margin: 0;padding: 0; background: pink}
+.allcategory li{width: 100%; height: 30px; line-height: 30px; border: 1px solid #ccc;background: #ddd}
+.allcategory ul{margin-left: 150px;margin-top: -31px}
+#category ul li{display: none}
+#category:hover > .allcategory > li{display: block}
+#category .allcategory > li:hover li{display: block}
+
+/* 헤더 > 검색바 */
+#search{float: left;width:500px; margin: 0 auto; margin-top:100px; margin-left: 50px; font-size: 15px}
+#search select {float: left; width: 80px;height:32px;line-height: 30px; text-indent:1em}
+#search input[type="text"]{float:left;width:320px; height:26px;line-height:26px;text-indent:1em;font-size:15px;margin-left: -1px}
+#search input[type="submit"]{width: 80px;height: 32px;margin-left: -1px}
+
+/* 헤더 > 상품등록 버튼 */
+#link{float: left;margin-top: 100px;margin-left: 30px}
+#link input[type="button"]{width: 100px; height: 32px}
+
+/* 헤더 > gnb 영역 */
+#gnb{position: absolute;top: 15px; right: 15px;margin: 0}
+#gnb li{float: left}
+#gnb a{display: block; padding:0 15px;color: #000;font-weight: bold}
+
+/* 헤더 > 모달 영역 */
+#m_login{width: 500px; height: 350px;background-color: cadetblue;text-align: center}
+#m_join{width: 500px; height: 500px;background-color: firebrick;text-align: center}
+#m_password{width: 500px; height: 230px;background-color: cadetblue;text-align: center}
+
+.closeBtn{float: right;margin-top: 10px; margin-right: 10px}
+.m_logo{clear: both; width: 100% height:110px;margin: 0 auto; margin-top: 25px;font-size: 30px;font-weight: bold;background-color: fuchsia}
+.m_info{width: 450px;margin: 0 auto; padding: 0; margin-top: 20px; background-color: beige}
+.m_info li{height: 50px;line-height: 50px}
+.m_info span{display: inline-block; width: 170px;font-size: 20px;font-weight: bold}
+.m_info input[type="text"],[type="password"]{width: 270px; height: 30px; text-indent: 1em;border-radius: 10px}
+.m_submit{width: 150px;height: 50px;font-size: 20px;font-weight: bold;margin-top: 20px}
+.m_notlogin{width: 265px; height: 30px; line-height: 30px; margin: 0 auto; margin-top: 30px; background-color: antiquewhite}
+.m_notlogin li{float: left; margin: 0 15px}
+
+#m_login{display: none}
+#m_join{display: none}
+#m_join div{position: relative}
+#m_password{display: none}
+.join_error{display: none; position: absolute; left: 460px; top:-40px; text-align: left; width: 280px; line-height: 30px; border: 1px solid #ccc; background-color: aliceblue}
+
+
+/* 푸터 영역 */
+.footwrap{width: 1000px; margin: 0 auto; height: 150px;text-align: center; font-size: 14px;color: dimgray; background-color: beige}
+.footwrap li{float: left}
+.footwrap ul{clear: both; }
+.footwrap p{clear: left}
+/* 푸터 컨텐츠*/
+.footcontent{display: inline-block;margin: 0;  padding: 0;  margin-top:10px; margin-bottom: 10px}
+.footcontent li{margin: 0 10px;font-weight: bold}
+.footcontent a{color: dimgray}
+/* 푸터 컴퍼니 영역*/
+.footcompany{display: inline-block;margin: 0;  padding: 0; margin-top:5px}
+.footcompany li{margin: 0 5px}
+.footwrap span{color: brown; font-weight: bold}
+
+/* 메인 영역*/
+/* 메인 상단 베너 영역*/
+#main_body{position: relative; width: 100%; margin-top: 150px}
+#banner{position: relative; width: 100%;height: 200px}
+#banner img{width: 100%;height: 100%}
+.control{position: absolute;top: 45%;left: 0; width: 100%}
+.control #prevBtn{float: left; width: 23px; height: 38px;margin-left: 15px}
+.control #nextBtn{float: right; width: 23px; height: 38px;margin-right: 15px}
+
+/* 메인 좌측 상품 영역*/
+#main_listarea{position: relative; float: left; width: 80%; padding: 5px 15px; box-sizing: border-box}
+#main_listarea li{float: left}
+#main_listarea ul,p{clear: both;padding: 0;margin: 0}
+.main_content{position: relative; width: 100%; height: 235px; margin: 40px 0;background-color: fuchsia}
+.main_content p{font-size: 23px;font-weight: bold;margin-bottom: 15px;margin-left: 15px}
+.main_content .item_area{width: 95%; height: 170px; margin-left:2.5%; padding: 20px 20px; box-sizing: border-box; background-color:  darkseagreen}
+.item_area ul{width: 100%;height: 130px;background-color: burlywood}
+.item_area li {width: 110px; height: 110px; margin-left: 20px;margin-top: 10px;}
+
+/* 메인 우측 온,오프 영역*/
+#main_rightbox{position: relative; float: right; width: 20%; height: 510px; padding: 5px 10px; box-sizing: border-box; margin-top: 45px; text-align: center; background-color: beige}
+#on_off_btn{position: absolute;width: 30px; height: 50px; text-align: center; top: 225px;margin-left: -10px;background-color: white}
+#on_off_btn img{margin-top: 5px}
+#main_rightbox ul{margin-top: 20px}
+#main_rightbox li{width: 110px; height: 140px;margin-top: 10px; background-color: forestgreen}
+
+.footer_area{background-color: black;width: 100%; height: 150px;clear: both}
+
+/* 검색 후 페이지 */
+#search_area{width: 100%; margin-top: 150px;background-color: blueviolet}
+/* 서브 카테고리 */
+#sub_catagory{width: 100%; height: 50px;line-height: 50px; background-color:floralwhite}
+.sub_ctg{float: left}
+.sub_ctg li{float: left; margin-left: 40px;}
+.sub_key{float: right; width: 300px;margin-right: 30px}
+.sub_key span{float: left}
+.sub_key ul li{float: left;margin-left: 20px}
+/* 게시판 타입 영역 */
+#search_type{width: 100%; height: 30px;line-height: 30px;background-color: dimgrey}
+#search_type ul li{float: left}
+#search_round {float: left}
+#search_round li {padding: 0 10px;background-color: azure}
+#search_choice{float: left;margin-left: 90px}
+#search_choice li{margin-left: 8px;background-color: beige}
+#search_type_choice{float: right;padding: 0 10px;background-color: forestgreen}
+#search_type_choice li{height: 30px;line-height: 30px}
+#search_type_choice li img{display: block;margin-top: 5px}
+/* 게시판 테이블 내용 */
+#search_list{width: 100%; background-color: firebrick}
+/* 게시판형 */
+#search_text{width: 100%;}
+#search_text .text_list{content: ""; display: block;clear: both}
+#search_text .text_list ul {width: 100%;text-align: center}
+#search_text .text_list ul li{float: left;border-right: 1px solid #ccc}
+#search_text .text_list ul li:nth-child(1){width: 95px}
+#search_text .text_list ul li:nth-child(2){width: 500px}
+#search_text .text_list ul li:nth-child(3){width: 100px}
+#search_text .text_list ul li:nth-child(4){width: 100px}
+#search_text .text_list ul li:nth-child(5){width: 100px}
+#search_text .text_list ul li:nth-child(6){width: 100px; border: 0}
+.text_head{height: 50px;line-height: 50px;background-color: forestgreen}
+.text_body{height: 120px;line-height: 120px;border-bottom: 1px solid #ccc}
+.text_body li{position: relative; height: 120px;line-height: 120px;}
+.text_body .text_detail img{float: left;display: block;margin-left: 10px;margin-top: 10px}
+.text_body .text_detail span{float: left;display: inline-block;width: 60%;height: 30px; line-height: 30px;margin-top: 25px;margin-left: 15px; text-align: left; background-color: aqua}
+.text_body .text_detail input[type="button"]{float: left;width: 140px;height: 30px;line-height: 30px; margin-top: 15px;margin-left: 15px}
+.text_body .payment img{margin-top: 10px}
+.text_body .certify{line-height: 100px}
+.text_body .certify span{position: absolute; top:25px;left: 20px; height: 25px; color: aliceblue}
+/* 게시판+이미지형 */
+#search_img_text{width: 100%; padding-top: 25px;background-color: aqua;display: none;}
+#search_img_text .img_text_grid {float: left; width: 220px;height: 350px;margin-top: 25px; margin-left: 24px; margin-bottom: 25px; background-color:burlywood}
+.img_text_grid img{margin: 10px;}
+/* 이미지형 */
+#search_img{width: 100%;display: none}
+.img_grid{float: left; position: relative; width: 170px;height: 170px;margin:25px 0 25px 24px; background-color: azure}
+.img_grid img{display: block;margin: 10px}
+.img_grid span{position: absolute; width: 100%; height: 50px; line-height: 50px;color:#fff; font-weight: bold;text-align: center; display: block; background-color: blueviolet;bottom: 0; display: none}
+.img_grid a:hover span{display: block}
+
+/* 마이페이지 */
+#mypage_area{position: relative;width: 100%; margin-top: 150px}
+/* 마이페이지 메뉴 탭 */
+.mypage_tap{position: relative; float: left; width: 600px; margin-top: 30px;margin-left: 30px; background-color: aliceblue}
+.mypage_tap ul{width: 100%; padding: 0}
+.mypage_tap li{float: left; width: 150px;text-align: center;border: 1px solid #ccc; background-color: blue}
+.mypage_tap li a{display: block; padding: 25px; color: aliceblue; font-size: 20px; font-weight: bold}
+
+/* 개인정보 영역 */
+#user_wrap{position: relative; float: left; width: 800px; margin-top: 15px; margin-left: 30px;}
+#user_wrap table{width: 100%; border: none;background-color: #ddd}
+#user_wrap tr{border: none}
+#user_wrap th{text-align: left; height: 50px;width: 150px;text-indent: 1em;background-color: aliceblue}
+#user_wrap td{background-color: cadetblue;text-align: center}
+#user_wrap td.user_table_line{width: 500px;text-indent: 1em;text-align: left}
+#name_change{width: 450px}
+#phone_change{width: 450px}
+#pass_change{width: 600px}
+#add_change{width: 560px}
+#ktalk_change{width: 450px}
+.user_change{position: absolute;width: 100%; left: 30%; top:30%;display: none;background-color: aliceblue;padding: 15px}
+.user_change .closeBtn{margin-top: 5px}
+.user_change span{display: block; float: left; width: 150px;height: 25px;line-height: 25px}
+.user_change input[type="text"]{height: 25px}
+#pass_change input[type="password"]{height: 25px;border-radius: 0;margin-bottom: 10px}
+#pass_change input[type="button"]{margin-top: 25px;margin-left: 20px}
+.user_change .pass_wrap{float: left}
+
+
+
+

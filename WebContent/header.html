@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="content/css/command.css">
+        <script src="content/js/join.js"></script>
+        <script src="content/js/modal.js"></script>
+        
+        <style>
+            
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("#join_form").submit(function() {
+                  var form = $(this);
+                  
+                  $.ajax({
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    type: "get",
+                    dataType: "html",
+
+                    success: function() {
+                      alert("회원가입 완료");
+                    }
+                  });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="headwrap">
+            <!-- 헤더 시작 -->
+            <div id="header">
+                <!-- 전체 카테고리 시작 -->
+                <div id="category">
+                    <span>카테고리 선택</span>
+                    <ul class="allcategory">
+                        <li><a href="#" class="choice">의류</a>
+                            <ul class="allcategory">
+                                <li><a href="#">상의</a></li>
+                                <li><a href="#">하의</a></li>
+                                <li><a href="#">외투</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">장난감</a></li>
+                        <li><a href="#">가전</a></li>
+                        <li><a href="#">아동용품</a></li>
+                        <li><a href="#">기타</a></li>
+                    </ul>
+                </div> 
+                <!-- 전체 카테고리 종료 -->
+                <!-- 검색바 시작 -->
+                <div id="search">
+                    <select>
+                        <option> 전체 </option>
+                        <option> 의류 </option>
+                        <option> 장난감 </option>
+                        <option> 가전 </option>
+                        <option> 악세서리 </option>
+                    </select>
+                    <input type="text">
+                    <input type="submit" value="검색">
+                </div>
+                <!-- 검색바 종료 -->
+                <!-- 상품등록버튼 시작 -->
+                <div id="link">
+                    <input type="button" value="판매등록">
+                    <input type="button" value="구매등록">
+                </div>
+                <!-- 상품등록버튼 종료 -->
+                
+                <!-- 로그인 전 서브 메뉴 시작 -->
+                <ul id="gnb">
+                    <li><a href="header.html">홈</a></li>
+                    <li>|</li>
+                    <li><a href="#" class="login_btn">로그인</a></li>
+                    <li>|</li>
+                    <li><a href="#" class="join_btn">회원가입</a></li>
+                </ul>
+                <!-- 로그인 전 서브 메뉴 종료 -->
+                <!-- 로그인 후 서브 메뉴 시작 -->
+                <!--
+                <div id="gnb">
+                    <a href="#">홈</a>
+                    <a href="#">로그아웃</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#">장바구니</a>
+                </div>-->
+                <!-- 로그인 후 서브 메뉴 종료 -->
+                
+            </div>
+            <!-- 헤더 종료 -->
+        </div>
+        
+        <!--- 로그인 --->
+        <div id="m_login">
+            <div class="closeBtn"><a href="#"><img src="content/image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo">로그인</div>
+            <ul class="m_info">
+                <li><span>E-mail</span><input type="text"></li>
+                <li><span>비밀번호</span><input type="password"></li>
+            </ul>
+            <button type="submit" class="m_submit">로그인</button>
+            <ul class="m_notlogin">
+                <li><a href="#"  class="join_btn">회원 가입하기</a></li>
+                <li><a href="#" class="pass_btn">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+        
+        <!--- 회원가입 --->
+        <div id="m_join">
+            <div class="closeBtn"><a href="#"><img src="content/image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo">회원가입</div>
+            <form action="action/join" id="join_form" name="joinForm">
+                <ul class="m_info">
+                    <li><span>E-mail</span><input type="text" id="join_mail" name="email" required>
+                        <div class="join_error"></div>
+                    </li>
+                    <li><span>비밀번호</span><input type="password" id="join_pass" name="password" required>
+                        <div class="join_error">영문 숫자포함 8자 이상 입력해주세요.</div>
+                    </li>
+                    <li><span>비밀번호 재확인</span><input type="password" id="join_lepass" required>
+                        <div class="join_error"></div>
+                    </li>
+                    <li><span>이름</span><input type="text" id="join_name" name="name"></li>
+                    <li><span>Phone</span><input type="text" id="join_phone" name="phone"></li>
+                    <li><span>카톡아이디</span><input type="text" id="join_ktalk" name="ktalk"></li>
+                </ul>
+                <button type="submit" class="m_submit">회원가입</button>
+            </form>
+        </div>
+        
+        <!--- 비밀번호찾기 --->
+        <div id="m_password">
+            <div class="closeBtn"><a href="#"><img src="content/image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo">비밀번호찾기</div>
+            <div class="pass m_info">
+                <span>E-mail</span>
+                <input type="text">
+            </div>
+            <button type="submit" class="m_submit">임시 비밀번호 발송</button>
+        </div>
+    </body>
+</html>

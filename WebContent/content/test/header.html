@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../css/command.css">
+    </head>
+    <body>
+        <div class="headwrap">
+            <!-- 헤더 시작 -->
+            <div id="header">
+                <!-- 전체 카테고리 시작 -->
+                <div id="category">
+                    <span>카테고리 선택</span>
+                    <ul class="allcategory" id="CategoryContent">
+ 						<!-- 여기에 Servlet 에서 받은 데이터를 ajax 를 통해 전송. -->
+                    </ul>
+                </div> 
+                <!-- 전체 카테고리 종료 -->
+                <!-- 검색바 시작 -->
+                <div id="search">
+                    <select>
+                        <option> 전체 </option>
+                        <option> 의류 </option>
+                        <option> 장난감 </option>
+                        <option> 가전 </option>
+                        <option> 악세서리 </option>
+                    </select>
+                    <input type="text">
+                    <input type="submit" value="검색">
+                </div>
+                <!-- 검색바 종료 -->
+                <!-- 상품등록버튼 시작 -->
+                <div id="link">
+                    <input type="button" value="판매등록">
+                    <input type="button" value="구매등록">
+                </div>
+                <!-- 상품등록버튼 종료 -->
+                
+                <!-- 로그인 전 서브 메뉴 시작 -->
+                <ul id="gnb">
+                    <li><a href="#">홈</a></li>
+                    <li>|</li>
+                    <li><a href="#">로그인</a></li>
+                    <li>|</li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+                <!-- 로그인 전 서브 메뉴 종료 -->
+                <!-- 로그인 후 서브 메뉴 시작 -->
+                <!--
+                <div id="gnb">
+                    <a href="#">홈</a>
+                    <a href="#">로그아웃</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#">장바구니</a>
+                </div>-->
+                <!-- 로그인 후 서브 메뉴 종료 -->
+                
+            </div>
+            <!-- 헤더 종료 -->
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/categoryHtmlData.js"></script>
+    </body>
+</html>

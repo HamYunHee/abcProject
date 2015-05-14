@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.shshop.mapper.UserMapper'>
+
+	<select id='getUserCount' resultType='int'>
+		SELECT COUNT(`id_user`) as count FROM `cr_user`;
+	</select>
+
+	<select id='getUserById' resultMap='User'>
+		SELECT * FROM `cr_user` WHERE `id_user`=${id_user};
+	</select>
+	
+ 	<select id='getUserByEmail' resultMap='User'>
+ 		SELECT * FROM `cr_user` WHERE `email`=${email} and `password`=${password};
+ 	</select>
+	
+	<select id='getAllUsers' resultMap='User'>
+		SELECT * FROM `cr_user`
+	</select>
+	
+	<select id='getSingleUser' resultMap='User'>
+		SELECT * FROM `cr_user` WHERE `id_user`=${id_user}
+	</select>
+
+	<select id='getAllProducts' resultMap='${ProductResultMap}'>
+		SELECT * FROM `ps_product` WHERE `id_user`= ${id_user};
+	</select>
+
+	<insert id='insertUser' parameterType='${UserType}' useGeneratedKeys='true' keyProperty='${id_user}'>
+		INSERT INTO `cr_user`
+		(`email`, `password`, `name`, `phone`, `ktalk_id`)
+		VALUES (${email}, ${password}, ${name}, ${phone}, ${ktalk_id})
+	</insert>
+
+	<update id='updateUser' parameterType='${UserType}'>
+		UPDATE `cr_user`
+		<set>
+			<if test="${name} != null"> `name`=${name},</if>
+			<if test="${password} != null"> `password`=${password}, </if>
+			<if test="${email} != null"> `email`=${email}, </if>
+			<if test="${gender} != null"> `gender`=${gender}, </if>
+			<if test="${ktalk_id} != null"> `ktalk_id`=${ktalk_id}, </if>
+			<if test="${phone} != null"> `phone`=${phone}, </if>
+			<if test="${birthday} != null"> `birthday`=${birthday}, </if>
+			<if test="${bank_name} != null"> `bank_name`=${bank_name}, </if>
+			<if test="${bank_num} != null"> `bank_num`=${bank_num}, </if>
+		</set>
+		WHERE `id_user`=${id_user}
+	</update>
+
+	<resultMap id='User' type='${UserType}'>
+		<id property='userId' column='id_user' />
+		<result property='name' column='name' />
+		<result property='gender' column='gender' />
+		<result property='ktalkId' column='ktalk_id' />
+		<result property='email' column='email' />
+		<result property='phone' column='phone' />
+		<result property='password' column='password' />
+		<result property='birthday' column='birthday' />
+		<result property='isDeleted' column='deleted' />
+		<result property='isGuest' column='is_guest' />
+		<result property='isProducer' column='is_producer' />
+		<result property='bankName' column='bank_name' />
+		<result property='bankNum' column='bank_num' />
+		<result property='lastPasswordGenerated' column='last_password_generated' />
+		<result property='dateCreated' column='date_created' />
+		<result property='dateUpdated' column='date_updated' />
+	</resultMap>
+</mapper>

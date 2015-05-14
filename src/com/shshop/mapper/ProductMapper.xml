@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.shshop.mapper.ProductMapper'>
+
+	<select id='getProductCount' resultType='int'>
+		SELECT COUNT(`id_product`) as count FROM `ps_product`;
+	</select>
+
+    <select id='getProductById' resultMap='Product'>							
+		SELECT * FROM `ps_product` WHERE `id_product` = ${id_product};				
+	</select>
+	
+	<insert id='insertProduct' parameterType='${ProductType}' useGeneratedKeys='true' keyProperty='${id_product}'>
+		INSERT INTO  `ps_product`(`id_user`,`name`,`price`,`stock`,`on_sale`,`on_open`,`tag`,`out_of_stock`,`description`,`searching_count`)
+		VALUES(${id_user}, ${name}, ${price}, ${stock}, ${on_sale}, ${on_open}, ${tag}, ${out_of_stock}, ${description}, ${searching_count})
+	</insert>
+	
+    <update id='updateProduct' parameterType='${ProductType}'>
+		UPDATE `ps_product`
+		<set>
+			<if test="${name} != null"> `name`=${name}, </if>
+			<if test="${price} != null"> `price`=${price}, </if>
+			<if test="${stock} != null"> `stock`=${stock}, </if>
+			<if test="${on_sale} != null"> `on_sale`=${on_sale}, </if>
+			<if test="${on_open} != null"> `on_open`=${on_open}, </if>
+			<if test="${tag} != null"> `tag`=${tag}, </if>
+			<if test="${out_of_stock} != null"> `out_of_stock`=${out_of_stock}, </if>
+			<if test="${description} != null"> `description`=${description}, </if>
+			<if test="${searching_count} != null"> `searching_count`=${searching_count}, </if>
+		</set>
+		WHERE `id_product`=${id_product}
+	</update>
+	
+	<delete id='deleteProduct'>
+		DELETE FROM `ps_product` WHERE `id_product`=${id_product}
+	</delete>
+	
+	<resultMap id='Product' type='${ProductType}' >
+		<id property='productId' column='id_product' />
+		<result property='userId' column='id_user' />
+		<result property='name' column='name' />
+		<result property='price' column='price' />
+		<result property='stock' column='stock' />
+		<result property='onSale' column='on_sale' />
+		<result property='onOpen' column='on_open' />
+		<result property='tag' column='tag' />
+		<result property='outOfStock' column='out_of_stock' />
+		<result property='description' column='description' /> 
+		<result property='searchingCount' column='searching_count' />
+		<result property='dateCreated' column='date_created' />
+		<result property='dateUpdated' column='date_updated' /> 
+	</resultMap>
+
+</mapper>

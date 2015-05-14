@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.shshop.mapper.CategoryMapper'>
+ 
+ 	<select id='getCategoryCount' resultType='int'>
+		SELECT COUNT(`id_category`) as count FROM `ps_category`;
+	</select>
+	
+	<select id='getCategoryById' resultMap='Category'>							
+		SELECT * FROM `ps_category` WHERE `id_category` = ${id_category};				
+	</select>
+
+	<select id='getChildrenCategories' parameterType='${CategoryType}' resultMap='Category'>							
+		SELECT * FROM `ps_category` WHERE `id_category_parent`= ${id_category};				
+	</select>
+	
+	<select id='getRootCategories' resultMap='Category'>							
+		SELECT * FROM `ps_category` WHERE ISNULL(`id_category_parent`);			
+	</select>
+ 
+	<select id='getAllProducts' parameterType='${CategoryType}' resultMap='${ProductResultMap}'>							
+		SELECT p.*
+		FROM `ps_product` p
+			INNER JOIN `ps_product_category` pc USING(`id_product`) 
+			INNER JOIN `ps_category` c USING(`id_category`)
+		WHERE c.`id_category` = ${id_category};
+	</select>
+	
+	<insert id='insertRootCategory' parameterType='${CategoryType}' useGeneratedKeys='true' keyProperty='${id_category}'>
+		INSERT INTO `ps_category` (`name`, `description`, `link`, `is_root_category`)
+		VALUES (${name}, ${description}, ${link}, ${is_root_category});
+	</insert>
+	
+	<insert id='insertChildCategory' parameterType='${CategoryType}' useGeneratedKeys='true' keyProperty='${id_category}'>
+		INSERT INTO `ps_category` (`id_category_parent`, `name`, `description`, `link`, `is_root_category`)
+		VALUES (${id_category_parent}, ${name}, ${description}, ${link}, ${is_root_category});
+	</insert>
+	
+	<update id='updateCategory' parameterType='${CategoryType}'>
+		UPDATE `ps_category`
+		<set>
+			<if test="${name} != null"> `name`=${name}, </if>
+			<if test="${link} != null"> `link`=${link}, </if>
+			<if test="${is_root_category} != null"> `is_root_category`=${is_root_category}, </if>
+			<if test="${description} != null"> `description`=${description}, </if>
+		</set>
+		WHERE `id_category`=${id_category}
+	</update>
+	
+	<delete id='deleteCategory'>
+		DELETE FROM `ps_category` WHERE `id_category`=${id_category}
+	</delete>
+	
+	<resultMap id='Category' type = '${CategoryType}' >
+		<id property='categoryId' column='id_category' />
+		<result property='parentCategoryId' column='id_category_parent'/>
+		<result property='name' column='name' />
+		<result property='link' column='link' />
+		<result property='isRootCategory' column='is_root_category' />
+		<result property='description' column='description' />
+		<result property='dateCreated' column='date_created' />
+		<result property='dateUpdated' column='date_updated' />
+	</resultMap>
+ 
+</mapper>

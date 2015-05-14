@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="../css/command.css" rel="stylesheet">
+        <style>
+            #m_login{width: 500px; height: 500px;background-color: cadetblue}
+            #m_join{width: 500px; height: 500px;background-color: firebrick}
+            #m_password{width: 500px; height: 300px;background-color: cadetblue}
+            
+            .closeBtn{float: right;margin-top: 10px; margin-right: 10px}
+            .m_logo{clear: both; width: 100% height:110px;margin: 0 auto; margin-top: 25px;background-color: fuchsia}
+            .m_logo img{display: block; margin: 0 auto}
+            .m_info{width: 450px;margin: 0 auto; padding: 0; margin-top: 20px; background-color: beige}
+            .m_info li{height: 50px;line-height: 50px;font-size: 20px;font-weight: bold}
+            .m_info span{display: inline-block; width: 170px}
+            .m_info input[type="text"],[type="password"]{width: 270px; height: 30px; text-indent: 1em;border-radius: 10px}
+        </style>
+    </head>
+    <body>
+        <!--- 로그인 --->
+        <div id="m_login">
+            <div class="closeBtn"><a href="#"><img src="image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo"><img src="http://placehold.it/210x110" alt=""></div>
+            <ul class="m_info">
+                <li><span>E-mail</span><input type="text"></li>
+                <li><span>비밀번호</span><input type="password"></li>
+            </ul>
+            <button type="submit">로그인</button>
+            <ul class="m_notlogin">
+                <li><a href="#">회원 가입하기</a></li>
+                <li><a href="#">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+        
+        <!--- 회원가입 --->
+        <div id="m_join">
+            <div class="closeBtn"><a href="#"><img src="image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo"><img src="http://placehold.it/210x110" alt=""></div>
+            <ul class="m_info">
+                <li><span>E-mail</span><input type="text"></li>
+                <li><span>비밀번호</span><input type="password"></li>
+                <li><span>비밀번호 재확인</span><input type="password"></li>
+            </ul>
+            <!-- 폰, 이름, 카톡 선택사항 -->
+            <button type="submit">회원가입</button>
+        </div>
+        
+        <!--- 비밀번호찾기 --->
+        <div id="m_password">
+            <div class="closeBtn"><a href="#"><img src="image/login_close.png" alt="닫기"></a></div>
+            <div class="m_logo"><img src="http://placehold.it/210x110" alt=""></div>
+            <div class="pass">
+                <span>E-mail</span>
+                <input type="text">
+            </div>
+            <button type="submit">임시 비밀번호 발송</button>
+        </div>
+    </body>
+</html>
